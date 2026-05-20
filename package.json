@@ -1,0 +1,13 @@
+{
+  "name": "comic-auto-doc",
+  "version": "1.0.0",
+  "description": "Comic Auto 文档站点 - 漫画自动订阅、爬取、下载和库管理系统",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.0"
+  }
+}
