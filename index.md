@@ -13,11 +13,8 @@ hero:
       text: 快速开始
       link: /guide/
     - theme: alt
-      text: 部署指南
-      link: /deploy/
-    - theme: alt
-      text: GitHub
-      link: https://github.com/cacty
+      text: 使用指南
+      link: /guide/
 ---
 
 <div class="carousel-wrapper">

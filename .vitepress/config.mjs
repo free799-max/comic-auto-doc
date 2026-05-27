@@ -21,6 +21,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '使用指南', link: '/guide/' },
+      { text: '定价', link: '/pricing' },
     ],
 
     sidebar: {
@@ -34,14 +35,13 @@ export default defineConfig({
           ]
         },
         {
-          text: '部署',
+          text: '使用指南',
           items: [
-            { text: '部署概览', link: '/guide/deploy' },
-            { text: '环境准备', link: '/guide/deploy-environment' },
-            { text: '后端部署', link: '/guide/deploy-backend' },
-            { text: '前端部署', link: '/guide/deploy-frontend' },
-            { text: 'Docker 部署', link: '/guide/deploy-docker' },
-            { text: 'Android 打包', link: '/guide/deploy-android' },
+            { text: '漫画探索', link: '/guide/explore' },
+            { text: '漫画订阅', link: '/guide/subscribe' },
+            { text: '站点管理', link: '/guide/sites' },
+            { text: '任务管理', link: '/guide/tasks' },
+            { text: '系统设置', link: '/guide/settings' },
           ]
         }
       ],

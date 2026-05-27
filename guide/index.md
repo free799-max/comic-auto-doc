@@ -2,6 +2,8 @@
 
 **漫画订阅自动化管理系统**，深度集成 **Komga / Kavita** 主流阅读器，轻松搭建专属私有漫画库。全程实现**一键订阅、自动下载、智能整理、实时追更**全自动化流程，告别手动操作，高效管理个人漫画资源，随时随地沉浸式阅漫。
 
+推荐搭配使用的软件为：[Komga](https://komga.org/docs/installation/docker)（漫画管理端）+ [Komelia](https://github.com/Snd-R/Komelia/releases)（安卓应用）：
+
 ## 功能概览
 
 | 功能 | 说明 |
@@ -13,9 +15,21 @@
 | 🔔 订阅追更 | 添加漫画订阅后，自动检查更新及入库      |
 | 📱 移动支持 | PWA + Android App，随时随地看漫画 |
 
+## 功能限制
+
+| 功能 | 订阅 | 不订阅 |
+|--------|------|--------|
+| 漫画探索发现 | ✅ 可用 | ✅ 可用 |
+| 媒体库刮削 | ✅ 可用 | ✅ 可用 |
+| 站点管理 | ✅ 可用 | ✅ 可用 |
+| 漫画追更订阅 | ✅ 可用 | ✅ 可用 |
+| 从漫画平台同步收藏 | ✅ 可用 | ✅ 可用 |
+| 自动追更下载刮削 | ✅ 新章节自动下载入库 | ❌ 不可用 |
+
+
 ## 快速部署
 
-### 方式一：单 Docker 命令
+### 单 Docker 命令
 
 所有服务合成一个容器启动，需要可以先在漫画保存目录创建cache（缓存），data（漫画数据）后面需要用到：
 
@@ -27,21 +41,6 @@ docker run -d \
     -v {替换为本机的数据目录}:/var/lib/postgresql/16/main \
     -v {替换为本机的漫画保存}:/mnt/media \
     ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.3.2
-```
-
-### 方式二：Docker Compose
-
-将数据库和应用分开启动：
-
-```bash
-# 准备目录
-mkdir -p /opt/comic-auto && cd /opt/comic-auto
-
-# 创建 docker-compose.yml 和 .env 后启动
-docker compose up -d
-
-# 创建管理员账号
-docker compose exec api python manage.py createsuperuser
 ```
 
 访问 `http://ip:8055` 即可开始使用。
