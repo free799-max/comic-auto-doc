@@ -9,7 +9,6 @@ export default defineConfig({
   base: '/',
   
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'theme-color', content: '#6366f1' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'zh-CN' }],
@@ -30,8 +29,8 @@ export default defineConfig({
           text: '开始',
           items: [
             { text: '快速开始', link: '/guide/' },
-            { text: '系统架构', link: '/guide/architecture' },
-            { text: '功能特性', link: '/guide/features' },
+            { text: '基础配置', link: '/guide/architecture' },
+            { text: '客户端', link: '/guide/features' },
           ]
         },
         {

@@ -17,16 +17,16 @@
 
 ### 方式一：单 Docker 命令
 
-所有服务合成一个容器启动：
+所有服务合成一个容器启动，需要可以先在漫画保存目录创建cache（缓存），data（漫画数据）后面需要用到：
 
 ```bash
 docker run -d \
-    --name comic-app \
+    --name comic-auto \
     --restart unless-stopped \
     -p 8055:80 \
     -v {替换为本机的数据目录}:/var/lib/postgresql/16/main \
     -v {替换为本机的漫画保存}:/mnt/media \
-    comic-app:latest
+    ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.3.2
 ```
 
 ### 方式二：Docker Compose

@@ -6,7 +6,7 @@
 /* CSS 变量覆盖 */
 :root {
   /* 侧边栏宽度 */
-  --vp-sidebar-width: 220px;
+  --vp-sidebar-width: 190px;
   /* 锚点偏移：避免被固定导航栏遮挡 */
   --vp-offset-top: 80px;
   /* 品牌色 - 靛紫 */
@@ -42,7 +42,7 @@
   --vp-c-brand-2: #a5b4fc;
   --vp-c-brand-3: #c7d2fe;
   --vp-c-brand-soft: rgba(129, 140, 248, 0.16);
-  
+
   --vp-c-accent-1: #f9a8d4;
   --vp-c-accent-2: #fbcfe8;
   --vp-c-accent-3: #fce7f3;
@@ -55,9 +55,25 @@
    全局样式增强
    ================================ */
 
-/* 页面内容最大宽度 */
+/* 页面内容最大化利用宽度 */
 .VPDoc.has-aside .content-container {
-  max-width: 780px;
+  max-width: none !important;
+}
+
+.VPDoc .content {
+  padding: 0 8px !important;
+}
+
+/* 内容区域整体加宽 */
+.VPDoc .container {
+  max-width: 1600px !important;
+}
+
+/* 右侧大纲宽度收窄 */
+.VPDoc .aside {
+  width: 150px !important;
+  padding-left: 12px !important;
+  flex-shrink: 0;
 }
 
 /* 代码块样式 */
@@ -294,6 +310,13 @@
   background-color: rgba(16, 16, 24, 0.85) !important;
 }
 
+@media (min-width: 1440px) {
+  .VPNavBar.has-sidebar .title {
+    padding-left: 28px !important;
+    width: var(--vp-sidebar-width) !important;
+  }
+}
+
 .VPNavBar .title {
   font-weight: 700 !important;
   font-size: 18px !important;
@@ -308,38 +331,21 @@
    侧边栏增强
    ================================ */
 .VPSidebar {
-  padding: var(--vp-nav-height) 16px 96px 16px !important;
+  overflow-x: hidden;
 }
 
-.VPSidebarItem .item {
-  border-radius: 8px !important;
-  margin: 2px 0 !important;
-  padding: 8px 12px !important;
-  transition: all 0.2s ease;
+@media (min-width: 1440px) {
+  .VPSidebar {
+    padding-left: 64px !important;
+  }
 }
 
-.VPSidebarItem .item:hover {
-  background-color: var(--vp-c-brand-soft);
+.VPSidebarItem .text {
+  font-size: 15px !important;
 }
 
-.VPSidebarItem.is-link.is-active .item {
-  background-color: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
-}
-
-.VPSidebarItem.is-link.is-active .item .link-text {
-  color: var(--vp-c-brand-1);
-}
-
-/* 侧边栏分组标题 */
 .VPSidebarItem .group-title {
-  font-weight: 600;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--vp-c-text-3);
-  padding: 12px 12px 8px;
+  font-size: 14px !important;
 }
 
 /* ================================
@@ -357,15 +363,15 @@
   .VPHero .name {
     font-size: 40px !important;
   }
-  
+
   .VPHero .text {
     font-size: 18px !important;
   }
-  
+
   .vp-doc h1 {
     font-size: 1.8rem;
   }
-  
+
   .vp-doc h2 {
     font-size: 1.3rem;
   }
