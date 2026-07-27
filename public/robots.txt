@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Allow: /guide/
+Allow: /pricing
+Disallow: /assets/
+
+Sitemap: https://comic.freeapps.uk/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 2
+
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 2

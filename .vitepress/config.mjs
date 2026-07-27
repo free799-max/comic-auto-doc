@@ -104,4 +104,8 @@ export default defineConfig({
   },
 
   cleanUrls: true,
+
+  sitemap: {
+    hostname: 'https://comic.freeapps.uk',
+  },
 })

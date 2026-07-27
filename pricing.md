@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 # 定价
 
 <div class="pricing-container">
@@ -13,7 +17,22 @@
       <li>✓ 从漫画平台同步收藏</li>
       <li class="pricing-disabled">✗ 自动追更下载刮削</li>
     </ul>
-    <a class="pricing-btn" href="#">开始使用</a>
+    <a class="pricing-btn" href="/guide/">开始使用</a>
+  </div>
+
+  <div class="pricing-card pricing-popular">
+    <div class="pricing-badge">体验</div>
+    <h3>月付</h3>
+    <div class="pricing-price">¥<strong>0.1</strong><span>/ 月</span></div>
+    <ul class="pricing-list">
+      <li>✓ 漫画探索发现</li>
+      <li>✓ 媒体库刮削</li>
+      <li>✓ 站点管理</li>
+      <li>✓ 漫画追更订阅</li>
+      <li>✓ 从漫画平台同步收藏</li>
+      <li>✓ 新章节自动下载入库</li>
+    </ul>
+    <a class="pricing-btn pricing-btn-primary" href="#">订阅</a>
   </div>
 
   <div class="pricing-card">
@@ -50,9 +69,10 @@
 <style scoped>
 .pricing-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
   margin-top: 32px;
+  width: 100%;
 }
 .pricing-card {
   position: relative;

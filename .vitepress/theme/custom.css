@@ -69,6 +69,10 @@
   max-width: 1600px !important;
 }
 
+.VPDoc .content {
+  max-width: none !important;
+}
+
 /* 右侧大纲宽度收窄 */
 .VPDoc .aside {
   width: 150px !important;
