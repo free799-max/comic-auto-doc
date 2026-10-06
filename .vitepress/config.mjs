@@ -22,6 +22,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '使用指南', link: '/guide/' },
       { text: '定价', link: '/pricing' },
+      { text: '演示站点', link: '/guide/demo' },
     ],
 
     sidebar: {
@@ -30,6 +31,7 @@ export default defineConfig({
           text: '开始',
           items: [
             { text: '快速开始', link: '/guide/' },
+            { text: '演示站点', link: '/guide/demo' },
             { text: '基础配置', link: '/guide/architecture' },
             { text: '客户端', link: '/guide/features' },
           ]

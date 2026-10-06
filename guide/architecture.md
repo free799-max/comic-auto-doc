@@ -34,4 +34,18 @@ http://file.freeapps.uk/files/stations-1.2.0.json
 
 刮削库的开启会定时刮削 Komga / Kavita 里面漫画。
 
+### 创建 API 密钥
+
+**Komga**：左侧菜单进入「我的账户 → API 密钥」，点击右下角 **+** 号，填写注释（如 `comic-auto`）后点击「生成」，复制生成的密钥。
+
+![Komga 创建 API 密钥](/images/guide/komga-api-key.png)
+
+**Kavita**：左侧菜单进入「帐户 → 身份验证密钥」，点击「+ 新的」，填写名称（如 `comic-auto`），到期保持「从不」，点击「保存」后复制生成的密钥。
+
+![Kavita 创建授权密钥](/images/guide/kavita-api-key.png)
+
+::: warning 注意
+密钥只在创建时完整显示一次，请立即复制保存，随后填到 Comic Auto 的媒体服务器配置中。
+:::
+
 ![配置媒体库](/images/guide/media-library.png)
