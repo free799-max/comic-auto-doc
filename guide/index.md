@@ -49,7 +49,7 @@ docker run -d \
     -p 8055:80 \
     -v {替换为本机的数据目录}:/var/lib/postgresql/16/main \
     -v {替换为本机的漫画保存}:/mnt/media \
-    ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.3.2
+    ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.6.5
 ```
 
 访问 `http://ip:8055` 即可开始使用。
@@ -61,7 +61,7 @@ docker run -d \
 ```yaml
 services:
   comic-auto:
-    image: ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.3.2
+    image: ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.6.5
     container_name: comic-auto
     restart: unless-stopped
     ports:
@@ -101,7 +101,7 @@ Comic Auto 负责**下载**，Komga / Kavita 负责**阅读和展示**，两者�
 ```yaml
 services:
   comic-auto:
-    image: ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.3.2
+    image: ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.6.5
     container_name: comic-auto
     restart: unless-stopped
     ports:

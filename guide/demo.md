@@ -3,24 +3,24 @@
 在线体验完整功能，无需部署。
 
 <div class="demo-container">
-  <a class="demo-card" href="https://comic-auto.freeapps.uk" target="_blank" rel="noopener">
+  <div class="demo-card">
     <h3>Comic Auto</h3>
     <p class="demo-desc">漫画自动化管理系统本体</p>
-    <p class="demo-account">账号：<code>待提供</code>　密码：<code>待提供</code></p>
-    <span class="demo-link">进入演示 →</span>
-  </a>
-  <a class="demo-card" href="https://komga.freeapps.uk" target="_blank" rel="noopener">
+    <p class="demo-account">账号：<code>freeapps</code><br>密码：<code>bHKO3Fsgm935yy</code></p>
+    <a class="demo-link" href="https://comic-auto.freeapps.uk" target="_blank" rel="noopener">进入演示 →</a>
+  </div>
+  <div class="demo-card">
     <h3>Komga</h3>
     <p class="demo-desc">漫画媒体库与 Web 阅读器</p>
-    <p class="demo-account">账号：<code>待提供</code>　密码：<code>待提供</code></p>
-    <span class="demo-link">进入演示 →</span>
-  </a>
-  <a class="demo-card" href="https://kavita.freeapps.uk" target="_blank" rel="noopener">
+    <p class="demo-account">账号：<code>demo@123.com</code><br>密码：<code>demo@123.com</code></p>
+    <a class="demo-link" href="https://komga.freeapps.uk" target="_blank" rel="noopener">进入演示 →</a>
+  </div>
+  <div class="demo-card">
     <h3>Kavita</h3>
     <p class="demo-desc">另一款漫画媒体库与阅读器</p>
-    <p class="demo-account">账号：<code>待提供</code>　密码：<code>待提供</code></p>
-    <span class="demo-link">进入演示 →</span>
-  </a>
+    <p class="demo-account">账号：<code>demo@123.com</code><br>密码：<code>demo@123.com</code></p>
+    <a class="demo-link" href="https://kavita.freeapps.uk" target="_blank" rel="noopener">进入演示 →</a>
+  </div>
 </div>
 
 <style scoped>
@@ -74,6 +74,11 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--vp-c-brand-1);
+  text-decoration: none;
+  align-self: flex-start;
+}
+.demo-link:hover {
+  text-decoration: none;
 }
 @media (max-width: 768px) {
   .demo-container { grid-template-columns: 1fr; }
