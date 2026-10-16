@@ -106,8 +106,6 @@ docker compose up -d
 | `https://dockerhub.icu` | 速度波动较小 |
 | `https://hub.rat.dev` | 公共源 |
 
-如果有云厂商账号（阿里云 / 腾讯云），优先使用控制台「容器镜像服务 → 镜像加速器」里的专属地址（如 `https://<你的ID>.mirror.aliyuncs.com`），稳定性最好。
-
 配置完成后重启 Docker 生效：
 
 ```bash
