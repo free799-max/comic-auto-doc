@@ -5,7 +5,7 @@
 ## 在线访问
 
 - **生产环境**：https://comic.freeapps.uk
-- **演示站点**：https://comic-auto.freeapps.uk（详见文档「演示站点」页）
+- **演示站点**：https://comic.freeapps.uk/guide/demo
 
 ## 技术架构
 
