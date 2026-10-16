@@ -36,6 +36,3 @@ npm run docs:preview  # 本地预览构建产物
 └── pricing.md        # 定价页
 ```
 
-## 相关仓库
-
-- GitHub：https://github.com/free799-max/comic-auto-doc
