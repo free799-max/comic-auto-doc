@@ -38,6 +38,8 @@
 
 ## 快速部署
 
+镜像托管在 Docker Hub：`free5104/comic-auto`。如果国内拉取缓慢或超时，先配置 [镜像加速](#docker-镜像加速)。
+
 ### 单 Docker 命令
 
 所有服务合成一个容器启动，需要可以先在漫画保存目录创建cache（缓存），data（漫画数据）后面需要用到：
@@ -49,7 +51,7 @@ docker run -d \
     -p 8055:80 \
     -v {替换为本机的数据目录}:/var/lib/postgresql/16/main \
     -v {替换为本机的漫画保存}:/mnt/media \
-    ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.6.5
+    free5104/comic-auto:v2.0.5
 ```
 
 访问 `http://ip:8055` 即可开始使用。
@@ -61,7 +63,7 @@ docker run -d \
 ```yaml
 services:
   comic-auto:
-    image: ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.6.5
+    image: free5104/comic-auto:v2.0.5
     container_name: comic-auto
     restart: unless-stopped
     ports:
@@ -76,6 +78,49 @@ services:
 ```bash
 docker compose up -d
 ```
+
+## Docker 镜像加速
+
+镜像托管在 Docker Hub，国内服务器直连拉取可能缓慢或超时，可配置镜像加速器解决。
+
+编辑 `/etc/docker/daemon.json`（不存在则新建），填入加速地址：
+
+```json
+{
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io",
+    "https://docker.1ms.run",
+    "https://docker.xuanyuan.me"
+  ]
+}
+```
+
+目前实测可用的公共加速源：
+
+| 加速地址 | 说明 |
+|------|------|
+| `https://docker.m.daocloud.io` | DaoCloud 公共源，稳定性较好 |
+| `https://docker.1ms.run` | 毫秒镜像，速度较快 |
+| `https://docker.xuanyuan.me` | 轩辕镜像，可作备选 |
+| `https://dockerproxy.net` | 老牌加速地址 |
+| `https://dockerhub.icu` | 速度波动较小 |
+| `https://hub.rat.dev` | 公共源 |
+
+如果有云厂商账号（阿里云 / 腾讯云），优先使用控制台「容器镜像服务 → 镜像加速器」里的专属地址（如 `https://<你的ID>.mirror.aliyuncs.com`），稳定性最好。
+
+配置完成后重启 Docker 生效：
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+docker info | grep -A 3 "Registry Mirrors"   # 验证配置是否加载
+```
+
+注意事项：
+
+- **加速源只配 2~3 个即可**。Docker 是依序回源而非并发，第一个源失效时每次拉取都要等超时，配太多反而更慢。
+- `registry-mirrors` **只对 Docker Hub 镜像生效**，对 `ghcr.io`、`gcr.io`、`quay.io` 等第三方仓库无效。
+- 公共加速源可用性变化较快，建议先用 `curl -I https://加速地址/v2/` 探测后再配置，失效了及时更换。
 
 ## 与 Komga / Kavita 的目录关系
 
@@ -101,7 +146,7 @@ Comic Auto 负责**下载**，Komga / Kavita 负责**阅读和展示**，两者�
 ```yaml
 services:
   comic-auto:
-    image: ccr.ccs.tencentyun.com/free-apps/comic-auto:v1.6.5
+    image: free5104/comic-auto:v2.0.5
     container_name: comic-auto
     restart: unless-stopped
     ports:
